@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	/*
+		hr태그 위에 자바그크립트로 로그인 폼을 만들어서 추가하세요.
+	*/
+	
+ 	var my_hr = null;
+	var newHr = null;
+	
+	function addElement(){
+	// 새로운 hr 생성
+		newHr = document.createElement('hr');
+		
+		newHr.innerHTML = '<form method="GET" action="test01.html" name="frm" id="frm"><div><label for="user">I D : </label><input type="text" name="name" id="user"><br></div><div><label for="pw">PW : </label><input type="password" name="pw" id="pw"><br></div><br><input type="submit" value="click" ></form>';
+
+	
+	my_hr = document.getElementById('hline');
+	document.body.insertBefore(newHr, my_hr);
+	} 
+	
+	
+	
+</script>
+</head>
+<body onload="addElement()">
+	<hr id="hline" style="clear: left; position: relative; margin-top: 100px;">로그인 폼 만들기</hr>
+</body>
+</html>

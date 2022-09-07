@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form {
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<form method="GET" action="test02.html" name="frm" id="frm">
+		<span name="idTitle">ID : </span><input type="text" name="woman" id="user" style="background-color: orange;"><br>
+		<span name="pwTitle">PW : </span><input type="password" name="pw" id="pw"><br>
+		<br>
+<!-- 		<input type="submit" value="제출"> -->
+		<!-- <button type="submit">제출</button> -->
+		<input type="button" value="click" id="btn">
+	</form>
+	<form method="GET" action="/black/">
+		<span>email : </span><input type="text" name="mail" value="jennie@githrd.com" readonly><br>
+		<span>tel : </span><input type="text" name="tel" value="010-1111-1111"  readonly>
+	</form>
+	
+<script type="text/javascript">
+	document.getElementById('btn').onclick = function(){
+		// 아이디가 user와 pw인 태그의 입력되 내용을 읽어서 출력해보자.
+		var sid = document.getElementById('user').value;
+		document.getElementById('user').style.backgroundColor = 'pink';
+		var spw = document.getElementById('pw').value;
+		
+		alert(sid + ' - ' + spw);
+		
+		document.frm.submit();
+//		location.href = 'test02.html?woman=' + sid + '&pw=' + spw;
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javaScript Study</title>
+<link rel="stylesheet" type="text/css" href="/black/resources/css/w3.css">
+<link rel="stylesheet" type="text/css" href="/black/resources/css/base.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	document.write("<p>URL 조회: " + location.search + "</p>");
+	// ex) ?name=a24566&id=zlazlaz&pw=a24566&gen=F
+</script>
+</head>
+<body>
+		
+	<div class="w3-center" id="d1"></div>
+
+<script type="text/javascript">
+
+	var url = location.search;
+	// ?뒤부터 추출
+	url = url.substring(1);
+	url = decodeURIComponent(url);
+	// 배열에 '&' 기준으로 나눠서 4개 저장
+	var arr = url.split('&');
+	// 연관배열
+	var data = {};
+	var key = [];
+	
+	for(var i = 0; i< arr.length ; i++ ){
+		var tmp = arr[i].split('=');
+
+	key[i] = tmp[0];
+		
+		data[tmp[0]] = tmp[1];
+		
+	}
+	for(var i = 0; i< arr.length; i++){
+		var tmp = document.getElementById('d1').innerHTML;
+		document.getElementById('d1').innerHTML = tmp + '<h1 class="w3-center">' + 
+					key[i] + ' : ' + data[key[i]] + '</h1>';
+	}
+
+</script>
+<script type="text/javascript" 
+		src="/black/resources/js/day04/jp\joinproc.js"></script>
+</body>
+</html>
